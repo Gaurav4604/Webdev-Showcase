@@ -12,7 +12,8 @@ button{
     border: 2px solid;
     padding: 1em 2em;
     font-size: 1em;
-    transition: transform 0.2s;
+    outline: none;
+    transition: all 0.2s;
 }
 button:hover{
     border-color: #f1ff5c;
@@ -23,7 +24,7 @@ button:hover{
     cursor: pointer;
 }
 button:active{
-    background: none;
-    border: 2px solid;
+    border: 2px solid #f1ff5c;
+    box-shadow: none;
     transform: translateY(0.25em);
 }
