@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-family: 'Monstserrat', sans-serif;
+    color: #fff;
+}
+
+.container{
+    padding: 100px 0;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #101010;
+}
+
+.timeline{
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline .ball{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+}
+
+.timeline ul{
+    list-style: none;
+}
+
+.timeline ul li{
+    padding: 20px;
+    background-color: #1e1f22;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.timeline ul li:first-child{
+    margin-top: 100px;
+}
+
+.timeline ul li:last-child{
+    margin-bottom: 100px;
+}
+
+.timeline-content h1{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.timeline-content p{
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+@media only screen and (min-width: 768px){
+    .timeline ul li{
+        width: 50%;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .timeline ul li:nth-child(odd){
+        float: left;
+        clear: right;
+        transform: translateX(-30px);
+    }
+
+    .timeline ul li:nth-child(even){
+        float: right;
+        clear: left;
+        transform: translateX(30px);
+    }
+    /* for the timeline strip */
+    .timeline:before{
+        content: "";
+        position: absolute;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: gray;
+        width: 2px;
+    }
+
+    /* for the timeline dots */
+    .timeline ul li::before{
+        transition: all 0.5s ease;
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: #101010;
+        border: 3px solid gray;
+        border-radius: 50%;
+        top: 0;
+    }
+
+    .timeline ul li:nth-child(odd)::before{
+        right: -30px;
+        transform: translate(50%, -50%);
+    }
+
+    .timeline ul li:nth-child(even)::before{
+        left: -30px;
+        transform: translate(-50%, -50%);
+    }
+
+    .timeline ul li:hover::before{
+        background-color: greenyellow;
+        border: 3px solid transparent;
+    }
+
+
+    /* for top and bottom balls */
+    .timeline .ball{
+        display: initial;
+    }
+    .timeline .ball.top{
+        top: 0;
+        right: 50%;
+        transform: translateX(10px);
+    }
+    .timeline .ball.bottom{
+        bottom: 0;
+        transform: translateX(-10px);
+    }
+    /* .timeline ul li:last-child::after{
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: gray;
+        border-radius: 50%;
+        bottom: -10px;
+    }
+
+    .timeline ul li:last-child:nth-child(even)::after{
+        left: -30px;
+        transform: translate(-50%, -50%);
+    }
+    .timeline ul li:last-child:nth-child(odd)::after{
+        right: -30px;
+        transform: translate(50%, -50%);
+    } */
+}

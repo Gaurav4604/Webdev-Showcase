@@ -18,6 +18,7 @@ const navCheck = function (entries) {
         const activeAnchor = document.querySelector(`[data-page = ${className}]`); //gives the achor tag in navbar linked to that particular section of page
         const gradientIndex = entry.target.getAttribute('data-index'); // gives the alloted index of the section Ex: 0,1,2
         const coords = activeAnchor.getBoundingClientRect(); // getting the height width position etc of the active achor tag
+        console.log(activeAnchor);
         const directions = {
             height: coords.height,
             width: coords.width,
